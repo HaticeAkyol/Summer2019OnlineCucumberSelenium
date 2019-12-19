@@ -10,6 +10,6 @@ Feature: Smoke test
 
   Scenario: Verify Manage Dashboards page
     And user navigates to "Dashboards" then to "Manage Dashboards"
-    Then user verifies that "All Manage Dashboards" page subtitle is displayed
+    Then user verifies that "All Manage Dashboard" page subtitle is displayed
 
 
