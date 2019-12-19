@@ -6,7 +6,7 @@ import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-
+ //import cucumber.api.java.en.*;
 
 public class LoginStepDefinitions {
     // Write code here that turns the phrase above into concrete actions
@@ -33,7 +33,7 @@ public class LoginStepDefinitions {
     @Then("user verifies that {string} page subtitle is displayed")
     public void user_verifies_that_page_subtitle_is_displayed(String string) {
         loginPage.waitUntilLoaderMaskDisappear();
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(5);
         Assert.assertEquals(string, loginPage.getPageSubTitle());
         System.out.println("Verifying page subtitle: " + string);
     }
@@ -58,4 +58,4 @@ public class LoginStepDefinitions {
     public void user_verifies_that_message_is_displayed(String string) {
         System.out.println("Verified that warning message is displayed: "+string);
     }
-    }
+}

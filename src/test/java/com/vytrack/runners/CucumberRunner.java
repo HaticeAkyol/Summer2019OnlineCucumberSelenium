@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
         features = "/Users/hatice akyol/IdeaProjects/Summer2019OnlineCucumberSelenium/src/test/resources/feature",
         glue = "com/vytrack/step_definitions",
         dryRun = false,
-        tags = "not @negative_test"
+        tags = "@smoke_test",
+        plugin = {"html:target/default-cucumber-reports"}
+
 )
 public class CucumberRunner {
 }
