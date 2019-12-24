@@ -97,8 +97,8 @@ public class BrowserUtils {
         TakesScreenshot ts = (TakesScreenshot) Driver.get();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
-        //where screenshot will be stored
-        //System.getProperty("user.dir") returns path to the project as a string
+        // where screenshot will be stored
+        // System.getProperty("user.dir") returns path to the project as a string
         String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
         File finalDestination = new File(target);
         // save the screenshot to the path given
@@ -172,7 +172,12 @@ public class BrowserUtils {
     public static List<String> getListOfString(List<WebElement> listOfWebElements) {
         List<String> listOfStrings = new ArrayList<>();
         for (WebElement element : listOfWebElements) {
-            listOfStrings.add(element.getText().trim());
+            String value = element.getText().trim();
+            //if there is no text
+            //do not add this blank text into list
+            if (value.length() > 0) {
+                listOfStrings.add(value);
+            }
         }
         return listOfStrings;
     }
