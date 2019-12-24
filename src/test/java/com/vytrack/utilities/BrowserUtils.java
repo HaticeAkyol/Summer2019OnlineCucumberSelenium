@@ -3,16 +3,16 @@ package com.vytrack.utilities;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.function.Function;
 
 public class BrowserUtils {
-
     //It will be used to pause our test execution
     //just provide number of seconds as a parameter
     public static void wait(int seconds) {
@@ -163,4 +163,18 @@ public class BrowserUtils {
 
     }
 
-}
+    /**
+     * This method will convert list of WebElements into list of string
+     *
+     * @param listOfWebElements
+     * @return list of strings
+     */
+    public static List<String> getListOfString(List<WebElement> listOfWebElements) {
+        List<String> listOfStrings = new ArrayList<>();
+        for (WebElement element : listOfWebElements) {
+            listOfStrings.add(element.getText().trim());
+        }
+        return listOfStrings;
+    }
+
+    }
