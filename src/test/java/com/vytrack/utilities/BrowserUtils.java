@@ -90,15 +90,15 @@ public class BrowserUtils {
      */
     public static String getScreenshot(String name) {
         // name the screenshot with the current date time to avoid duplicate name
-//        String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));​
+        // String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));​
         SimpleDateFormat df = new SimpleDateFormat("-yyyy-MM-dd-HH-mm");
         String date = df.format(new Date());
         // TakesScreenshot ---> interface from selenium which takes screenshots
         TakesScreenshot ts = (TakesScreenshot) Driver.get();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
-        // where screenshot will be stored
-        // System.getProperty("user.dir") returns path to the project as a string
+        //where screenshot will be stored
+        //System.getProperty("user.dir") returns path to the project as a string
         String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
         File finalDestination = new File(target);
         // save the screenshot to the path given
@@ -160,7 +160,6 @@ public class BrowserUtils {
     public static void waitForPageTitle(String pageTitle) {
         WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
         wait.until(ExpectedConditions.titleIs(pageTitle));
-
     }
 
     /**
