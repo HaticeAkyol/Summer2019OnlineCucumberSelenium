@@ -11,9 +11,10 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hook {
     @Before
     public void setup(){
+
         System.out.println("##############################");
         System.out.println("Test setup!");
-        Driver.get().manage().window().maximize();
+//        Driver.get().manage().window().maximize();
     }
 
     @After
